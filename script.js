@@ -11,9 +11,14 @@ function onSubmit(e)
         alert('Please Enter Details!!!')
     }
     else
-    {
+    {   let myObj={
+        name:nameInput.value,
+        email:emailInput.value
+        }
+        let myObj_serialised=JSON.stringify(myObj)
+        localStorage.setItem('obj',myObj_serialised)
         document.querySelector('#head').textContent="USER ADDED"
-        localStorage.setItem(nameInput.value,emailInput.value)
+        
         nameInput.value=""
         emailInput.value=""
     }
